@@ -19,7 +19,7 @@
 
     - name: Build Docker image
       community.docker.docker_image:
-        name: Agri-farm
+        name: agri-farm
         build:
           path: . # Path to the directory containing your Dockerfile
         state: present
@@ -27,8 +27,8 @@
 
     - name: Run Docker container
       community.docker.docker_container:
-        name: Agri-farm_container
-        image: Agri-farm:latest
+        name: agri-farm_container
+        image: agri-farm:latest
         state: started
         ports:
           - "80:80" # Map host port 80 to container port 80
