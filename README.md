@@ -163,7 +163,7 @@ CMD ["nginx", "-g", "daemon off;"]
 ### Remove old image
 
 ```
-docker rmi agri-farm
+docker rmi <image-name>
 ```
 
 ### To check images
