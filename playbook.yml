@@ -2,7 +2,7 @@
 ---
 - name: Deploy Docker Container
   hosts: localhost # Define your target hosts in your inventory
-  become: no # Run tasks with elevated privileges
+  become: yes # Run tasks with elevated privileges
 
   tasks:
     # - name: Install Docker
