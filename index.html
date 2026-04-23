@@ -49,55 +49,53 @@ body{font-family:Segoe UI,Arial;background:#f4f7f0;color:#222}
 <div class="products-grid" id="grid"></div>
 
 <script>
-
 const products = [
 
-/* EXISTING + NEW WITH IMAGES */
+{ id:1, name:'Mahindra Tractor', cat:'tractors', price:685000, img:'https://source.unsplash.com/400x300/?tractor,farm' },
 
-{ id:1, name:'Mahindra Tractor', cat:'tractors', price:685000, img:'https://images.unsplash.com/photo-1598514983318-2f64f8f4796c' },
-{ id:2, name:'John Deere Tractor', cat:'tractors', price:890000, img:'https://images.unsplash.com/photo-1501004318641-b39e6451bec6' },
+{ id:2, name:'John Deere Tractor', cat:'tractors', price:890000, img:'https://source.unsplash.com/400x300/?agriculture,tractor' },
 
-{ id:5, name:'Combine Harvester', cat:'harvesting', price:2400000, img:'https://images.unsplash.com/photo-1560493676-04071c5f467b' },
+{ id:5, name:'Combine Harvester', cat:'harvesting', price:2400000, img:'https://source.unsplash.com/400x300/?combine,harvester' },
 
-{ id:9, name:'Drip Irrigation Kit', cat:'irrigation', price:85000, img:'https://images.unsplash.com/photo-1502082553048-f009c37129b9' },
+{ id:9, name:'Drip Irrigation Kit', cat:'irrigation', price:85000, img:'https://source.unsplash.com/400x300/?drip,irrigation' },
 
-{ id:12, name:'Rotavator', cat:'tillage', price:78000, img:'https://images.unsplash.com/photo-1600585154526-990dced4db0d' },
+{ id:12, name:'Rotavator', cat:'tillage', price:78000, img:'https://source.unsplash.com/400x300/?plough,tractor' },
 
-{ id:16, name:'Power Sprayer', cat:'spraying', price:12500, img:'https://images.unsplash.com/photo-1595433562696-14f7c1d0c43b' },
+{ id:16, name:'Power Sprayer', cat:'spraying', price:12500, img:'https://source.unsplash.com/400x300/?agriculture,sprayer' },
 
-{ id:18, name:'Seed Drill', cat:'planting', price:68000, img:'https://images.unsplash.com/photo-1523741543316-beb7fc7023d8' },
+{ id:18, name:'Seed Drill', cat:'planting', price:68000, img:'https://source.unsplash.com/400x300/?seed,drill,farm' },
 
-/* NEW ITEMS */
+{ id:21, name:'Mouldboard Plough', cat:'tillage', price:42000, img:'https://source.unsplash.com/400x300/?ploughing,field' },
 
-{ id:21, name:'Mouldboard Plough', cat:'tillage', price:42000, img:'https://images.unsplash.com/photo-1589927986089-35812388d1f4' },
+{ id:22, name:'Laser Land Leveler', cat:'tillage', price:350000, img:'https://source.unsplash.com/400x300/?land,leveling,farm' },
 
-{ id:22, name:'Laser Land Leveler', cat:'tillage', price:350000, img:'https://images.unsplash.com/photo-1500937386664-56d1dfef3854' },
+{ id:23, name:'Square Baler', cat:'harvesting', price:780000, img:'https://source.unsplash.com/400x300/?hay,baler' },
 
-{ id:23, name:'Square Baler', cat:'harvesting', price:780000, img:'https://images.unsplash.com/photo-1592982537447-7440770cbfc9' },
+{ id:24, name:'Round Baler', cat:'harvesting', price:950000, img:'https://source.unsplash.com/400x300/?round,baler' },
 
-{ id:24, name:'Round Baler', cat:'harvesting', price:950000, img:'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc' },
+{ id:25, name:'Fertilizer Spreader', cat:'spraying', price:18000, img:'https://source.unsplash.com/400x300/?fertilizer,spreader' },
 
-{ id:25, name:'Fertilizer Spreader', cat:'spraying', price:18000, img:'https://images.unsplash.com/photo-1500595046743-ddf4d3d753fd' },
+{ id:27, name:'Power Weeder', cat:'tillage', price:48000, img:'https://source.unsplash.com/400x300/?weeder,farm' },
 
-{ id:27, name:'Power Weeder', cat:'tillage', price:48000, img:'https://images.unsplash.com/photo-1501004318641-b39e6451bec6' },
+{ id:28, name:'Tractor Trailer', cat:'transport', price:220000, img:'https://source.unsplash.com/400x300/?tractor,trailer' },
 
-{ id:28, name:'Tractor Trailer', cat:'transport', price:220000, img:'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2' },
+{ id:29, name:'Front Loader', cat:'tractors', price:310000, img:'https://source.unsplash.com/400x300/?front,loader' },
 
-{ id:29, name:'Front Loader', cat:'tractors', price:310000, img:'https://images.unsplash.com/photo-1581091215367-59ab6b3d0f1f' },
+{ id:30, name:'Post Hole Digger', cat:'tillage', price:65000, img:'https://source.unsplash.com/400x300/?post,hole,digger' },
 
-{ id:30, name:'Post Hole Digger', cat:'tillage', price:65000, img:'https://images.unsplash.com/photo-1568605114967-8130f3a36994' },
+{ id:31, name:'Mulcher', cat:'tillage', price:145000, img:'https://source.unsplash.com/400x300/?mulcher,farm' },
 
-{ id:31, name:'Mulcher', cat:'tillage', price:145000, img:'https://images.unsplash.com/photo-1500937386664-56d1dfef3854' },
+{ id:32, name:'Silage Machine', cat:'harvesting', price:275000, img:'https://source.unsplash.com/400x300/?silage,tractor' },
 
-{ id:32, name:'Silage Machine', cat:'harvesting', price:275000, img:'https://images.unsplash.com/photo-1574943320219-553eb213f72d' },
+{ id:33, name:'Mini Rice Mill', cat:'processing', price:120000, img:'https://source.unsplash.com/400x300/?rice,mill' },
 
-{ id:33, name:'Mini Rice Mill', cat:'processing', price:120000, img:'https://images.unsplash.com/photo-1586201375761-83865001e31c' },
+{ id:34, name:'Oil Expeller', cat:'processing', price:98000, img:'https://source.unsplash.com/400x300/?oil,press,machine' },
 
-{ id:34, name:'Oil Expeller', cat:'processing', price:98000, img:'https://images.unsplash.com/photo-1604908554027-e477d54d8dba' },
-
-{ id:35, name:'Chaff Cutter', cat:'processing', price:25000, img:'https://images.unsplash.com/photo-1500595046743-ddf4d3d753fd' }
+{ id:35, name:'Chaff Cutter', cat:'processing', price:25000, img:'https://source.unsplash.com/400x300/?chaff,cutter' }
 
 ];
+
+
 
 let cart = {};
 let current = 'all';
