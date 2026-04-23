@@ -49,81 +49,60 @@ body{font-family:Segoe UI,Arial;background:#f4f7f0;color:#222}
 <div class="products-grid" id="grid"></div>
 
 <script>
+
 const products = [
 
 { id:1, name:'Mahindra Tractor', cat:'tractors', price:685000, img:'images/mahindra.jpg' },
-
 { id:2, name:'John Deere Tractor', cat:'tractors', price:890000, img:'images/john-deere.jpg' },
-
 { id:5, name:'Combine Harvester', cat:'harvesting', price:2400000, img:'images/combine-harvester.jpg' },
-
 { id:9, name:'Drip Irrigation Kit', cat:'irrigation', price:85000, img:'images/drip.jpg' },
-
 { id:12, name:'Rotavator', cat:'tillage', price:78000, img:'images/rotavator.jpg' },
-
 { id:16, name:'Power Sprayer', cat:'spraying', price:12500, img:'images/power-sprayer.jpg' },
-
 { id:18, name:'Seed Drill', cat:'planting', price:68000, img:'images/seed-drill.jpg' },
-
 { id:21, name:'Mouldboard Plough', cat:'tillage', price:42000, img:'images/plough.jpg' },
-
 { id:22, name:'Laser Land Leveler', cat:'tillage', price:350000, img:'images/laser-land-leveler.jpg' },
-
 { id:23, name:'Square Baler', cat:'harvesting', price:780000, img:'images/square-baler.jpg' },
-
 { id:24, name:'Round Baler', cat:'harvesting', price:950000, img:'images/round-baler.jpg' },
-
 { id:25, name:'Fertilizer Spreader', cat:'spraying', price:18000, img:'images/fertilizer-spreader.jpg' },
-
 { id:27, name:'Power Weeder', cat:'tillage', price:48000, img:'images/power-weeder.jpg' },
-
 { id:28, name:'Tractor Trailer', cat:'transport', price:220000, img:'images/tractor-trailer.jpg' },
-
 { id:29, name:'Front Loader', cat:'tractors', price:310000, img:'images/front-loader.jpg' },
-
 { id:30, name:'Post Hole Digger', cat:'tillage', price:65000, img:'images/post-hole-digger.jpg' },
-
 { id:31, name:'Mulcher', cat:'tillage', price:145000, img:'images/mulcher.jpg' },
-
 { id:32, name:'Silage Machine', cat:'harvesting', price:275000, img:'images/silage-machine.jpg' },
-
 { id:33, name:'Mini Rice Mill', cat:'processing', price:120000, img:'images/mini-rice-mill.jpg' },
-
 { id:34, name:'Oil Expeller', cat:'processing', price:98000, img:'images/oil-expeller.jpg' },
-
 { id:35, name:'Chaff Cutter', cat:'processing', price:25000, img:'images/chaff-cutter.jpg' }
 
 ];
-</script>
-
-
 
 let cart = {};
 let current = 'all';
 
 function filterCat(cat){
-current = cat;
-render();
+    current = cat;
+    render();
 }
 
 function render(){
-let list = products.filter(p => current==='all'||p.cat===current);
+    let list = products.filter(p => current==='all'||p.cat===current);
 
-document.getElementById('grid').innerHTML = list.map(p=>`
-<div class="card">
-<img src="${p.img}">
-<div class="card-body">
-<h3>${p.name}</h3>
-<p class="price">₹${p.price.toLocaleString()}</p>
-<button class="add-btn" onclick="add(${p.id})">Add to Cart</button>
-</div>
-</div>
-`).join('');
+    document.getElementById('grid').innerHTML = list.map(p=>`
+    <div class="card">
+        <img src="${p.img}">
+        <div class="card-body">
+            <h3>${p.name}</h3>
+            <p class="price">₹${p.price.toLocaleString()}</p>
+            <button class="add-btn" onclick="add(${p.id})">Add to Cart</button>
+        </div>
+    </div>
+    `).join('');
 }
 
 function add(id){
-cart[id]=(cart[id]||0)+1;
-document.getElementById('cart-count').innerText=Object.values(cart).reduce((a,b)=>a+b,0);
+    cart[id]=(cart[id]||0)+1;
+    document.getElementById('cart-count').innerText =
+        Object.values(cart).reduce((a,b)=>a+b,0);
 }
 
 render();
