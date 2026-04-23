@@ -49,6 +49,10 @@ sudo usermod -aG docker jenkins
 sudo systemctl enable jenkins
 sudo systemctl start jenkins
 ```
+- Access Jenkins at `http://<EC2-Public-IP>:8080`.
+- Unlock Jenkins using the initial admin password from `/var/lib/jenkins/secrets/initialAdminPassword`.
+- Install suggested plugins and create an admin user.
+
 ## Allow Passwordless Sudo (Recommended)
 
 ### Configure Jenkins user to run sudo without password.
@@ -74,6 +78,10 @@ Ensure the EC2 security group allows:
 
 ## 🧪 Jenkins Job Configuration
 
+###  Configure Jenkins Plugins
+Install necessary plugins via **Manage Jenkins > Manage Plugins > Available**:
+- **pipelinestageview**
+  
 ### Job Name: `Build-and-Deploy-App`
 
 #### **Stage 1: Clone Git Repository**
