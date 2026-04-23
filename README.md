@@ -160,4 +160,20 @@ CMD ["nginx", "-g", "daemon off;"]
   ```
 - Monitor EC2 resource usage—`t3.micro` is suitable for testing, not production.
 
+### Remove old image
+
+```
+docker rmi agri-farm
+```
+
+### To check images
+```
+docker ps
+```
+
+### To remove images
+```
+docker stop <container id>
+docker rm <containert id>
+```
 ---
