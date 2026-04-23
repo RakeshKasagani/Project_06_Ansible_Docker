@@ -51,16 +51,16 @@ sudo systemctl start jenkins
 ```
 ## Allow Passwordless Sudo (Recommended)
 
-# Configure Jenkins user to run sudo without password.
-## Run this on your server:
+### Configure Jenkins user to run sudo without password.
+### Run this on your server:
 ```
 sudo visudo
 ```
-## Add this line at bottom:
+### Add this line at bottom:
 ```
 jenkins ALL=(ALL) NOPASSWD: ALL
 ```
-## This allows Jenkins to execute sudo without asking for a password.
+### This allows Jenkins to execute sudo without asking for a password.
 ---
 
 ## 🔐 Security Group Configuration
